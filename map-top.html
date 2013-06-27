@@ -1,0 +1,396 @@
+<!DOCTYPE html "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ <title>Top Ski Resorts In Europe</title>
+ <style type="text/css">
+   .labels {
+     color: crimson;
+     background-color: white;
+     font-family: "Lucida Grande", "Arial", sans-serif;
+     font-size: 10px;
+     font-weight: bold;
+     text-align: center;
+     width: auto;
+     border: 1px solid black;
+     white-space: nowrap;
+   }
+ </style>
+ <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+ <script type="text/javascript" src="../skidata/markerwithlabel.js"></script>
+ <script type="text/javascript">
+
+   function initMap() {
+     var latLng = new google.maps.LatLng(47.16605, 11.86433);
+
+     var map = new google.maps.Map(document.getElementById('map_canvas'), {
+       zoom: 9,
+       center: latLng,
+       mapTypeId: google.maps.MapTypeId.TERRAIN
+     });
+
+     resorts = getMatchedData();
+     for(i=0; i<resorts.length; i++)
+     {
+       var marker = new MarkerWithLabel({
+       position: new google.maps.LatLng(resorts[i].latitude, resorts[i].longitude),
+       map: map,
+       labelContent: resorts[i].description,
+       labelAnchor: new google.maps.Point(22, 0),
+       labelClass: "labels", // the CSS class for the label
+       labelStyle: {opacity: 0.75}
+     });
+     }
+   };
+
+  function getMatchedData() {
+    return [
+   {
+      "latitude":"45.00517",
+      "longitude":"6.12256",
+      "description":"Les Deux Alpes"
+   },
+   {
+      "latitude":"47.22566",
+      "longitude":"12.03685",
+      "description":"Gerlos"
+   },
+   {
+      "latitude":"47.20000",
+      "longitude":"11.86670",
+      "description":"Hippach"
+   },
+   {
+      "latitude":"47.16605",
+      "longitude":"11.86433",
+      "description":"Mayrhofen"
+   },
+   {
+      "latitude":"47.51360",
+      "longitude":"12.30160",
+      "description":"Ellmau"
+   },
+   {
+      "latitude":"47.44830",
+      "longitude":"12.15770",
+      "description":"Hopfgarten Im Brixental"
+   },
+   {
+      "latitude":"47.43166",
+      "longitude":"12.21495",
+      "description":"Westendorf"
+   },
+   {
+      "latitude":"47.11350",
+      "longitude":"13.13520",
+      "description":"Bad Gastein"
+   },
+   {
+      "latitude":"47.17080",
+      "longitude":"13.10410",
+      "description":"Bad Hofgastein"
+   },
+   {
+      "latitude":"47.25000",
+      "longitude":"13.10000",
+      "description":"Dorfgastein"
+   },
+   {
+      "latitude":"47.45000",
+      "longitude":"12.38330",
+      "description":"Kitzbuhel"
+   },
+   {
+      "latitude":"47.25000",
+      "longitude":"13.53330",
+      "description":"Obertauern"
+   },
+   {
+      "latitude":"47.38330",
+      "longitude":"12.63330",
+      "description":"Saalbach Hinterglemm"
+   },
+   {
+      "latitude":"46.96670",
+      "longitude":"11.00740",
+      "description":"Solden"
+   },
+   {
+      "latitude":"45.16550",
+      "longitude":"6.42873",
+      "description":"Valloire"
+   },
+   {
+      "latitude":"45.47009",
+      "longitude":"6.90795",
+      "description":"Tignes"
+   },
+   {
+      "latitude":"46.27160",
+      "longitude":"6.83930",
+      "description":"Chatel"
+   },
+   {
+      "latitude":"46.15910",
+      "longitude":"6.67000",
+      "description":"Les Gets"
+   },
+   {
+      "latitude":"46.19450",
+      "longitude":"6.76850",
+      "description":"Morzine"
+   },
+   {
+      "latitude":"45.45560",
+      "longitude":"6.69390",
+      "description":"Champagny En Vanoise"
+   },
+   {
+      "latitude":"45.50570",
+      "longitude":"6.68030",
+      "description":"La Plagne"
+   },
+   {
+      "latitude":"45.57764",
+      "longitude":"6.78389",
+      "description":"Les Arcs"
+   },
+   {
+      "latitude":"45.89010",
+      "longitude":"6.79830",
+      "description":"Les Houches"
+   },
+   {
+      "latitude":"45.54900",
+      "longitude":"6.76456",
+      "description":"Peisey Vallandry"
+   },
+   {
+      "latitude":"44.94565",
+      "longitude":"6.55941",
+      "description":"Serre Chevalier"
+   },
+   {
+      "latitude":"46.00650",
+      "longitude":"6.68950",
+      "description":"Flaine"
+   },
+   {
+      "latitude":"46.08340",
+      "longitude":"6.72740",
+      "description":"Samoens"
+   },
+   {
+      "latitude":"45.90580",
+      "longitude":"6.42580",
+      "description":"La Clusaz"
+   },
+   {
+      "latitude":"45.85680",
+      "longitude":"6.61810",
+      "description":"Megeve"
+   },
+   {
+      "latitude":"44.93090",
+      "longitude":"6.72330",
+      "description":"Montgenevre"
+   },
+   {
+      "latitude":"44.36540",
+      "longitude":"6.59700",
+      "description":"Pra Loup"
+   },
+   {
+      "latitude":"45.38010",
+      "longitude":"6.50438",
+      "description":"Saint Martin De Belleville"
+   },
+   {
+      "latitude":"45.28770",
+      "longitude":"6.90183",
+      "description":"Val Cenis"
+   },
+   {
+      "latitude":"46.49840",
+      "longitude":"11.35360",
+      "description":"Alta Badia"
+   },
+   {
+      "latitude":"45.07880",
+      "longitude":"6.70430",
+      "description":"Bardonecchia"
+   },
+   {
+      "latitude":"45.71670",
+      "longitude":"6.94880",
+      "description":"La Thuile"
+   },
+   {
+      "latitude":"46.54510",
+      "longitude":"10.14130",
+      "description":"Livigno"
+   },
+   {
+      "latitude":"46.25230",
+      "longitude":"10.57770",
+      "description":"Passo Tonale"
+   },
+   {
+      "latitude":"44.95580",
+      "longitude":"6.87840",
+      "description":"Sestriere"
+   },
+   {
+      "latitude":"46.18330",
+      "longitude":"6.86667",
+      "description":"Champery"
+   },
+   {
+      "latitude":"46.61670",
+      "longitude":"8.05000",
+      "description":"Grindelwald"
+   },
+   {
+      "latitude":"46.94290",
+      "longitude":"10.35890",
+      "description":"Samnaun"
+   },
+   {
+      "latitude":"46.47271",
+      "longitude":"7.28681",
+      "description":"Gstaad"
+   },
+   {
+      "latitude":"46.48330",
+      "longitude":"7.56667",
+      "description":"Adelboden"
+   },
+   {
+      "latitude":"46.11260",
+      "longitude":"7.49631",
+      "description":"Evolene"
+   },
+   {
+      "latitude":"46.10000",
+      "longitude":"7.21667",
+      "description":"Verbier"
+   },
+   {
+      "latitude":"46.63317",
+      "longitude":"8.59577",
+      "description":"Andermatt"
+   },
+   {
+      "latitude":"46.51670",
+      "longitude":"9.86667",
+      "description":"Celerina"
+   },
+   {
+      "latitude":"46.30970",
+      "longitude":"7.47448",
+      "description":"Crans Montana"
+   },
+   {
+      "latitude":"47.09220",
+      "longitude":"9.30727",
+      "description":"Flumserberg"
+   },
+   {
+      "latitude":"46.72150",
+      "longitude":"9.55870",
+      "description":"Lenzerheide"
+   },
+   {
+      "latitude":"46.01801",
+      "longitude":"7.74785",
+      "description":"Zermatt"
+   },
+    {"latitude":"45.09720","longitude":"6.08110","description":"Alpe d'Huez"},
+    {"latitude":"46.50000","longitude":"9.83333","description":"St Moritz"},
+    {"latitude":"47.1333313","longitude":"10.2666597","description":"St Anton am Arlberg"},
+    {"latitude":"47.0332985","longitude":"10.6000004","description":"Serfaus"},
+    {"latitude":"47.0166588","longitude":"10.2833300","description":"Ishgl"},
+    {"latitude":"42.5833015","longitude":"1.6666000","description":"Grandvalira"},
+    {"latitude":"46.5666618","longitude":"11.6666603","description":"Ortisei"},
+    {"latitude":"44.0953063","longitude":"6.9292454","description":"Valberg"},
+    {"latitude":"44.5964268","longitude":"6.7279918","description":"Vars"},
+    {"latitude":"47.1666603","longitude":"10.1666603","description":"Zürs"},
+    {"latitude":"47.2081160","longitude":"10.1416980","description":"Lech"},
+    {"latitude":"46.1818161","longitude":"7.3724780","description":"Thyon 2000"},
+    {"latitude":"42.9102323","longitude":"0.1758721","description":"La Mongie"},
+    {"latitude":"46.0257662","longitude":"6.6379371","description":"Les Carroz"},
+    {"latitude":"46.4500008","longitude":"9.7833328","description":"Villars"},
+    {"latitude":"46.0257662","longitude":"6.6379371","description":"Les Carroz"},
+    {"latitude":"45.0333290","longitude":"6.8666658","description":"Sauze d'Oulx"},
+    {"latitude":"46.5373829","longitude":"12.1389217","description":"Cortina"},
+    {"latitude":"44.9333000","longitude":"6.7500000","description":"Clavière"},
+    {"latitude":"47.5333290","longitude":"12.2500000","description":"Scheffau"},
+    {"latitude":"47.5000000","longitude":"12.1833296","description":"Söll"},
+    {"latitude":"46.6111524","longitude":"13.2793111","description":"Nassfeld - Hermagor"},
+    {"latitude":"45.4666595","longitude":"6.9666662","description":"Val d'Isère"},
+    {"latitude":"46.5666618","longitude":"11.6666603","description":"Val Gardena"},
+    {"latitude":"46.8077590","longitude":"9.2628420","description":"Laax"},
+    {"latitude":"46.5999985","longitude":"7.9000001","description":"Lauterbrunnen"},
+    {"latitude":"42.6833305","longitude":"0.9333330","description":"Baqueira Beret"},
+    {"latitude":"47.1500015","longitude":"11.8333302","description":"Finkenberg"},
+    {"latitude":"47.13806688467195","longitude":"11.713829040527344","description":"Tux"},
+    {"latitude":"47.45002","longitude":"12.25119","description":"Brixen im Thale"},
+    {"latitude":"45.4166985","longitude":"6.6500001","description":"Courchevel"},
+    {"latitude":"45.3965873","longitude":"6.5663742","description":"Méribel"},
+    {"latitude":"45.2977661","longitude":"6.5837667","description":"Val Thorens"},
+    {"latitude":"45.9166985","longitude":"6.8666701","description":"Chamonix"},
+    {"latitude":"47.14232881553146","longitude":"10.292043685913086","description":"St Jakob am Arlberg"},
+    {"latitude":"47.47024","longitude":"12.14367","description":"Itter"},
+    {"latitude":"46.7536446","longitude":"9.1152226","description":"Obersaxen"},
+    {"latitude":"46.4895082","longitude":"7.2647059","description":"Saanen"},
+    {"latitude":"46.5176096","longitude":"7.3117156","description":"Saanenmöser"},
+    {"latitude":"46.504541","longitude":"7.2910971","description":"Schönried"},
+    {"latitude":"46.272917","longitude":"7.06619","description":"Gryon"},
+    {"latitude":"44.2251187","longitude":"6.935221","description":"Auron"},
+    {"latitude":"45.5909959","longitude":"6.874525","description":"Villaroger"},
+    {"latitude":"45.534722","longitude":"6.636944","description":"Montalbert"},
+    {"latitude":"45.56036819482581","longitude":"6.736550331115723","description":"Montchavin - Les Coches"},
+    {"latitude":"45.8929403","longitude":"6.7110641","description":"St - Gervais"},
+    {"latitude":"45.819302","longitude":"6.516386","description":"Flumet"},
+    {"latitude":"47.347097","longitude":"10.169894","description":"Kleinwalsertal"},
+    {"latitude":"47.0573568","longitude":"10.6200224","description":"Fiss"},
+    {"latitude":"47.07486","longitude":"10.64907","description":"Ladis"},
+    {"latitude":"47.24476","longitude":"12.22724","description":"Wald im Oberpinzgau"},
+    {"latitude":"46.1447158","longitude":"7.2330679","description":"La Tzoumaz"},
+    {"latitude":"42.5931974","longitude":"0.5383581","description":"Cerler"},
+    {"latitude":"45.183414","longitude":"6.478624","description":"Valmeinier"},
+    {"latitude":"47.51551961710744","longitude":"12.327861785888672","description":"Going am Wilder Kaiser"},
+    {"latitude":"47.23335","longitude":"11.88189","description":"Zell im Zillertal"},
+    {"latitude":"46.55992261593561","longitude":"11.71966552734375","description":"Santa Cristina"},
+    {"latitude":"37.1053995","longitude":"-3.1578875","description":"Sierra Nevada"},
+    {"latitude":"42.3513654","longitude":"1.9025181","description":"Masella"},
+    {"latitude":"42.7785773","longitude":"-0.3574946","description":"Fórmigal"},
+    {"latitude":"42.5660922","longitude":"1.5967009","description":"Canillo"},
+    {"latitude":"42.5363306","longitude":"1.5831105","description":"Encamp"},
+    {"latitude":"42.5423356","longitude":"1.7338275","description":"Pas de la Casa"},
+    {"latitude":"42.5768972","longitude":"1.6677639","description":"Soldeu"},
+    {"latitude":"45.822746","longitude":"6.726553","description":"Les Contamines"},
+    {"latitude":"47.14046061392255","longitude":"10.158920288085938","description":"Stuben"},
+    {"latitude":"47.09558","longitude":"13.63702","description":"St Michael im Lungau"},
+    {"latitude":"42.896546","longitude":"0.064521","description":"Barèges"},
+    {"latitude":"44.0942239","longitude":"6.990253","description":"Beuil - les - Launes"},
+    {"latitude":"41.847663","longitude":"14.079944","description":"Roccaraso"},
+    {"latitude":"44.4827156","longitude":"3.7082566","description":"Orcières 1850"},
+    {"latitude":"44.37178456062143","longitude":"6.683034896850586","description":"Le Sauze/Super Sauze"},
+    {"latitude":"45.206364","longitude":"6.264322","description":"St Jean d'Arves - Les Sybelles"},
+    {"latitude":"44.27713216798682","longitude":"6.578021049499512","description":"Val d'Allos - La Foux"},
+    {"latitude":"46.49921942402402","longitude":"11.876220703125","description":"Arabba - Marmolada"},
+    {"latitude":"45.9333305","longitude":"7.6333332","description":"Cervinia"},
+    {"latitude":"46.379622761364125","longitude":"11.663360595703125","description":"Moena di Fassa "},
+    {"latitude":"46.379119451754704","longitude":"11.790132522583008","description":"Passo San Pellegrino"},
+    {"latitude":"42.827709","longitude":"-0.55649","description":"Candanchú"},
+    {"latitude":"45.62729","longitude":"6.849464","description":"La Rosiere"},
+];
+}
+
+ </script>
+</head>
+<body onload="initMap()">
+ <div id="map_canvas" style="height: 100%; width: 100%"></div>
+</body>
+</html>
